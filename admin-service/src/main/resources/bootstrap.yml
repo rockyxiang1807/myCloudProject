@@ -1,0 +1,30 @@
+server:
+  port: 8880
+  servlet:
+    context-path: /
+#微服务配置
+spring:
+  application:
+    name: admin-service
+  # NaCos
+  cloud:
+    service-registry:
+      auto-registration:
+        # 是否注册到注册中心
+        enabled: true
+    nacos:
+      username: nacos
+      password: nacos
+      discovery:
+        server-addr: localhost:8848
+        namespace: 0fbb001e-63bc-4e14-a49b-9cd2c7efcaf3
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        file-extension: yaml
+        prefix: ${spring.application.name}
+        shared-configs:
+#          - dataId: mysql-config.yaml
+
+  profiles:
+    active: dev
