@@ -1,7 +1,7 @@
 server:
   port: 8882
   servlet:
-    context-path: /
+    context-path: /method
 #微服务启动参数
 spring:
   application:
