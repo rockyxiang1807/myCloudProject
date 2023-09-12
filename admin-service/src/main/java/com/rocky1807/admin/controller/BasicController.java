@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 public class BasicController {
 
-    @GetMapping("/admin/first")
+    @GetMapping("/first")
     public String first(){
         log.info("============= Begin. ");
         return "============= Admin!!!";
